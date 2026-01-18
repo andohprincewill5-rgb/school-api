@@ -1,0 +1,10 @@
+@app.get("/assignments/")
+def list_assignments():
+    return session.query(Assignment).all()
+
+@app.post("/assignments/")
+def create_assignment(assignment: AssignmentSchema):
+    db_assignment = Assignment(**assignment.dict())
+    session.add(db_assignment)
+    session.commit()
+    return db_assignment
