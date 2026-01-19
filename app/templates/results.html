@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f6f9; }
+    h1 { background: #2c3e50; color: white; padding: 1rem; }
+    .card { background: white; margin: 1rem; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <h1>Results</h1>
+  <div class="card">
+    <table>
+      <tr><th>Student</th><th>Subject</th><th>Score</th></tr>
+      {% for result in results %}
+        <tr>
+          <td>{{ result.student }}</td>
+          <td>{{ result.subject }}</td>
+          <td>{{ result.score }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+</html>

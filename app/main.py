@@ -4,11 +4,13 @@ from app.db import get_db,SessionLocal, Base, engine
 from app.models import Assignment
 from app import models, schemas
 from app.routers import assignments, results, announcements
+from app.routers import admin 
 
 app = FastAPI()
 app.include_router(assignments.router)
 app.include_router(results.router)
 app.include_router(announcements.router)
+app.include_router(admin.router)
 
 
 
